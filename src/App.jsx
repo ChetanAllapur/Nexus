@@ -8,6 +8,11 @@ import { Tabs } from "./components/Tabs";
 import { TopicSection } from "./components/TopicSection";
 import { Login } from "./components/Login";
 import { auth, db } from "./lib/firebase";
+
+// Check if Firebase is configured
+if (!auth || !db) {
+  console.error("Firebase not configured. Please create .env.local with VITE_FIREBASE_* keys.");
+}
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { HERO_PILLS, STACK_COLORS, STACK_ORDER, TABS, TIME_BLOCKS } from "./constants/roadmap";
 import { LEVEL_META } from "./data/levelMeta";
@@ -189,6 +194,48 @@ export default function App() {
       };
     });
   }, []);
+
+  // Show setup instructions if Firebase isn't configured
+  if (!auth || !db) {
+    return (
+      <div style={{ 
+        height: '100vh', 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        background: '#0a0a0f', 
+        color: 'white', 
+        fontFamily: 'Inter, sans-serif',
+        padding: '2rem',
+        textAlign: 'center'
+      }}>
+        <h1 style={{ marginBottom: '1rem', color: '#f87171' }}>Firebase Not Configured</h1>
+        <p style={{ marginBottom: '1rem', color: '#9ca3af' }}>
+          Please create a <code>.env.local</code> file with your Firebase configuration.
+        </p>
+        <pre style={{ 
+          background: '#1f2937', 
+          padding: '1rem', 
+          borderRadius: '8px', 
+          textAlign: 'left',
+          fontSize: '0.875rem',
+          maxWidth: '500px'
+        }}>
+{`VITE_FIREBASE_API_KEY=your-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-domain.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=123456789
+VITE_FIREBASE_APP_ID=1:123456789:web:abc123
+VITE_FIREBASE_MEASUREMENT_ID=G-XXXXXXXX`}
+        </pre>
+        <p style={{ marginTop: '1rem', color: '#6b7280', fontSize: '0.875rem' }}>
+          Copy <code>.env.example</code> to <code>.env.local</code> and add your Firebase values.
+        </p>
+      </div>
+    );
+  }
 
   if (authLoading) {
     return (
