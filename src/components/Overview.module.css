@@ -1,0 +1,438 @@
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mastery Rank Section */
+.masteryRankSection {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.rankCard {
+  background: linear-gradient(135deg, #0d1520 0%, #1a2535 100%);
+  border: 1px solid #141c28;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rankCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.rankIcon {
+  font-size: 64px;
+  background: rgba(255, 255, 255, 0.03);
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rankDetails {
+  flex: 1;
+}
+
+.rankLabel {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: #4a6070;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+.rankTitle {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.xpBarWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.xpBar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.xpFill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.xpInfo {
+  display: flex;
+  justify-content: space-between;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: #4a6070;
+}
+
+/* Stats Overview */
+.statsOverview {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+}
+
+.readinessGauge {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.gaugeTitle {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.gaugeValue {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.gaugeSub {
+  font-size: 11px;
+  color: #4a6070;
+}
+
+.stackProgressList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.stackMiniStat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stackMiniInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stackMiniName { color: #94a3b8; }
+.stackMiniPercent { color: #fff; font-family: "DM Mono", monospace; }
+
+.stackMiniBarWrap {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.stackMiniBar {
+  height: 100%;
+  border-radius: 100px;
+}
+
+/* Rest of the styles */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.monthCard {
+  background: #0d1520;
+  border: 1px solid #141c28;
+  border-radius: 20px;
+  padding: 24px;
+  transition: transform 0.3s;
+}
+
+.monthCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.monthTag {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.weekTag {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: #3a5060;
+}
+
+.monthTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.monthBar {
+  height: 4px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.monthItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.monthItem {
+  font-size: 13px;
+  color: #7090a0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.rulePanel {
+  background: linear-gradient(90deg, #0d1520 0%, #16202c 100%);
+  border: 1px solid #141c28;
+  border-left: 4px solid #6366f1;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.ruleTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.ruleText {
+  font-size: 15px;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+.ruleHighlightLearn { color: #61dafb; font-weight: 600; }
+.ruleHighlightBuild { color: #a78bfa; font-weight: 600; }
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.statCard {
+  background: #0d1520;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+}
+
+.statLabel {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.statValue {
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.statCaption {
+  font-size: 11px;
+  color: #4a6070;
+  margin-bottom: 16px;
+}
+
+.statDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 16px;
+}
+
+.statMeta {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.statMetaSpacer { margin: 0 8px; opacity: 0.3; }
+
+.timeBlockWrap {
+  background: #0d1520;
+  border: 1px solid #141c28;
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.timeTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.timeBlocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.timeBlock {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.timeBlockTime {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  color: #61dafb;
+  margin-bottom: 8px;
+}
+
+.timeBlockLabel {
+  font-size: 14px;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.footerNote {
+  text-align: center;
+  font-size: 12px;
+  color: #3a5060;
+  font-family: "DM Mono", monospace;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+
+  .masteryRankSection {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .rankCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 20px;
+    gap: 24px;
+  }
+
+  .rankIcon {
+    width: 100px;
+    height: 100px;
+    font-size: 48px;
+    margin: 0 auto;
+  }
+
+  .rankTitle {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .xpInfo {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .statsOverview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .readinessGauge {
+    padding: 32px 20px;
+  }
+
+  .gaugeValue {
+    font-size: 42px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .statValue {
+    font-size: 32px;
+  }
+
+  .rulePanel {
+    padding: 24px;
+  }
+
+  .ruleTitle {
+    font-size: 18px;
+  }
+
+  .timeBlocks {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+

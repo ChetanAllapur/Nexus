@@ -1,0 +1,401 @@
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #4a6070;
+}
+
+.legendDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.stackProgress {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0d1520;
+  border: 1px solid #141c28;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.progressLabel {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: #3a5060;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progressValue {
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #61dafb;
+}
+
+.featuredNote {
+  margin: 0 0 24px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(97, 218, 251, 0.16);
+  background:
+    radial-gradient(circle at top right, rgba(97, 218, 251, 0.08), transparent 32%),
+    linear-gradient(180deg, rgba(13, 21, 32, 0.98), rgba(10, 16, 24, 0.98));
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.featuredNote:hover {
+  transform: translateY(-2px);
+  border-color: rgba(97, 218, 251, 0.3);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.3);
+}
+
+.featuredNote:focus-visible,
+.stackBtn:focus-visible,
+.clickable:focus-visible {
+  outline: 2px solid rgba(97, 218, 251, 0.55);
+  outline-offset: 2px;
+}
+
+.featuredNoteTop {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.featuredLabel {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #61dafb;
+  margin-bottom: 8px;
+}
+
+.featuredTitle {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.15;
+  color: #eef4fb;
+}
+
+.syncIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  color: #4a6070;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.syncDot {
+  width: 6px;
+  height: 6px;
+  background: #6cc24a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(108, 194, 74, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.featuredSummary {
+  margin: 12px 0 14px;
+  color: #8aa1b4;
+  line-height: 1.7;
+  font-size: 0.96rem;
+  max-width: 68ch;
+}
+
+.featuredChips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.featuredChipButton {
+  appearance: none;
+  border: 1px solid rgba(42, 63, 85, 0.75);
+  background: rgba(20, 28, 40, 0.96);
+  color: #cfe5f0;
+  cursor: pointer;
+}
+
+.featuredChip {
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #cfe5f0;
+  background: rgba(20, 28, 40, 0.96);
+  border: 1px solid rgba(42, 63, 85, 0.75);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.featuredChipButton:hover {
+  border-color: rgba(97, 218, 251, 0.35);
+  background: rgba(25, 35, 50, 0.98);
+  color: #eef4fb;
+}
+
+.featuredChipButton:focus-visible {
+  outline: 2px solid rgba(97, 218, 251, 0.55);
+  outline-offset: 2px;
+}
+
+.stackTabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.stackBtn {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid #1a2535;
+  background: #0d1520;
+  color: #4a6070;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    background 0.18s ease;
+  text-transform: uppercase;
+}
+
+.stackBtn:hover {
+  border-color: #2a3f55;
+  color: #dde4ee;
+  transform: translateY(-1px);
+}
+
+.active {
+  color: #080c10;
+  border-color: transparent;
+}
+
+.topicSection {
+  margin-bottom: 24px;
+}
+
+.sectionHeader {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4a6070;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #141c28;
+}
+
+.topicGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.topicRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border-radius: 7px;
+  background: #0d1520;
+  border: 1px solid #141c28;
+  transition: all 0.15s;
+  overflow: hidden;
+}
+
+.checkbox {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.02);
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  color: #3a5060;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:hover {
+  background: rgba(97, 218, 251, 0.08);
+  color: #61dafb;
+}
+
+.checked {
+  color: #080c10 !important;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.rowContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+}
+
+.completed .topicName {
+  color: #3a5060;
+  text-decoration: line-through;
+}
+
+.completed {
+  border-color: rgba(255, 255, 255, 0.03);
+}
+
+.topicRow:hover {
+  border-color: rgba(97, 218, 251, 0.18);
+  background: linear-gradient(180deg, rgba(17, 25, 37, 0.98), rgba(10, 16, 24, 0.98));
+}
+
+.clickable {
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(97, 218, 251, 0.04);
+}
+
+.clickable:hover {
+  transform: translateX(4px);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.18);
+}
+
+.noteIndicator {
+  font-size: 9px;
+  color: #61dafb;
+  background: rgba(97, 218, 251, 0.1);
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.topicDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.topicName {
+  font-size: 0.93rem;
+  color: #c2d0dc;
+  flex: 1;
+  line-height: 1.45;
+}
+
+.topicLevel {
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .stackProgress {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .topicGrid {
+    gap: 8px;
+  }
+
+  .topicRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+  }
+
+  .checkbox {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .rowContent {
+    flex: 1;
+    padding: 10px 12px;
+    min-width: 0;
+  }
+
+  .topicName {
+    font-size: 0.88rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .topicLevel {
+    display: none;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .featuredNote {
+    padding: 16px;
+  }
+
+  .featuredNoteTop {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .featuredBadge {
+    align-self: flex-start;
+  }
+}

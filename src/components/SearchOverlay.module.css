@@ -1,0 +1,248 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at center, rgba(97, 218, 251, 0.08) 0%, transparent 70%),
+    rgba(4, 6, 8, 0.85);
+  backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  background: linear-gradient(180deg, rgba(13, 21, 32, 0.98), rgba(8, 12, 16, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 
+    0 32px 100px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  overflow: hidden;
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.searchIcon {
+  font-size: 22px;
+  margin-right: 18px;
+  filter: drop-shadow(0 0 8px rgba(97, 218, 251, 0.4));
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f8fafc;
+  font-size: 20px;
+  font-weight: 500;
+  outline: none;
+  letter-spacing: -0.01em;
+}
+
+.input::placeholder {
+  color: rgba(138, 161, 180, 0.4);
+}
+
+.kbd {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #61dafb;
+  background: rgba(97, 218, 251, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.resultsList {
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.resultItem {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 14px;
+  margin-bottom: 6px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.01) translateX(4px);
+}
+
+.stackIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  margin-right: 18px;
+}
+
+.resultInfo {
+  flex: 1;
+}
+
+.topicName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 2px;
+}
+
+.stackName {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.noteTag {
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: #61dafb;
+  background: rgba(97, 218, 251, 0.1);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comingSoon {
+  font-size: 10px;
+  font-weight: 600;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.noResults {
+  padding: 60px 40px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.shortcuts {
+  padding: 24px 20px 16px;
+}
+
+.shortcutTitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.shortcutGrid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.shortcutBtn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shortcutBtn:hover {
+  background: rgba(97, 218, 251, 0.1);
+  color: #61dafb;
+  border-color: rgba(97, 218, 251, 0.4);
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding-top: 8vh;
+    padding-inline: 12px;
+  }
+
+  .container {
+    border-radius: 20px;
+  }
+
+  .searchBox {
+    padding: 16px 18px;
+  }
+
+  .searchIcon {
+    font-size: 18px;
+    margin-right: 12px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .kbd {
+    display: none;
+  }
+
+  .shortcutTitle {
+    font-size: 9px;
+  }
+
+  .shortcutBtn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-30px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.resultsList::-webkit-scrollbar {
+  width: 5px;
+}
+
+.resultsList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
